@@ -47,7 +47,7 @@ for (i = 0; i < Job.length; i++) {
 
     if (count == 8) {
         // Pular linha
-        document.writeln(' <br/>');
+        document.writeln('<br/>');
         count = 0;
     }
 }
