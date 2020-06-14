@@ -22,27 +22,27 @@ var Job = [
     }
 
 ]
-
+// verificar se está correto
 // console.log(Job[0]);
+
 var lista = 0;
 
-const dateStart = new Date('2019-11-10 09:00:00');
-
-const dateEnd = new Date('2019-11-11 12:00:00');
-
 for (i = 0; i < Job.length; i++) {
-    var dateIndex = Job[i].MaxDate;
-    console.log(Job[i].MaxDate)
-    if (dateStart.getTime() <= new Date(Job[i].MaxDate).getTime() 
-    && dateEnd.getTime() >= new Date(Job[i].MaxDate).getTime()) {
-        console.log('A data', dateIndex, 'está contida dentro do período especificado');
-    } else {
-        console.log('A data', Job[i].MaxDate, 'está fora do período especificado');
-    }
+    
 }
 
-for (i = 0; i < Job.length - 1; i++) {
-    if (new Date(Job[i].MaxDate).getTime() < new Date(Job[i + 1].MaxDate).getTime())
-        lista = i;
-    console.log('Na iteração', i, 'Lista equivale', lista);
-} 
+console.log('Consultando array antes de ordenar');
+console.log(Job[0].MaxDate);
+console.log(Job[1].MaxDate);
+console.log(Job[2].MaxDate);
+
+
+Job.sort(function(a, b) {
+    var dateA = new Date(a.MaxDate),
+        dateB = new Date(b.MaxDate);
+    return dateA - dateB;
+});
+console.log('Consultando array depois de ordenar');
+console.log(Job[0].MaxDate);
+console.log(Job[1].MaxDate);
+console.log(Job[2].MaxDate); 
